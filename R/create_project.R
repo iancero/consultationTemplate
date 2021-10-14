@@ -31,8 +31,14 @@ create_project <- function(path, ...) {
   #   writeLines(paste(git_ignores, sep = '\n'), '.gitignore')
   # }
 
+  # create project file structure
   folders <- c('data', 'emails', 'meeting_notes', 'deliverables')
   for(folder in folders){
     dir.create(folder, recursive = T, showWarnings = F)
   }
+
+  # create and open an empty template on startup
+  markdown_template <- readLines('data/markdown_template.Rmd')
+  writeLines(markdown_template, 'meeting1.Rmd')
+
 }
