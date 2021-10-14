@@ -18,7 +18,7 @@ create_project <- function(path, ...) {
   # # * One allows them to select if the project will have a .gitignore file
   # # * The other will create a folder, given a select input from the user
   # # Check .gitignore argument
-  # if(dots[["createGitignore"]]) {
+  # if(dots[['createGitignore']]) {
   #   git_ignores <-
   #     c(
   #       '.Rhistory',
@@ -38,7 +38,13 @@ create_project <- function(path, ...) {
   }
 
   # create and open an empty template on startup
-  markdown_template <- readLines('data/markdown_template.Rmd')
+  md_template_file <- system.file(
+    'extdata',
+    'markdown_template.Rmd',
+    package = 'consultationTemplate',
+    mustWork = TRUE)
+
+  markdown_template <- readLines(md_template_file)
   writeLines(markdown_template, 'meeting1.Rmd')
 
 }
