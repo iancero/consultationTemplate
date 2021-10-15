@@ -14,6 +14,7 @@ create_project <- function(path, ...) {
   # Collect the list of inputs in a list to be called later:
   dots <- list(...)
 
+
   # # In the project template we've added 2 choices for the user:
   # # * One allows them to select if the project will have a .gitignore file
   # # * The other will create a folder, given a select input from the user
@@ -43,8 +44,9 @@ create_project <- function(path, ...) {
     'markdown_template.Rmd',
     package = 'consultationTemplate',
     mustWork = TRUE)
-
   markdown_template <- readLines(md_template_file)
-  writeLines(markdown_template, 'meeting1.Rmd')
+
+  author <- dots[['author']]
+  writeLines(markdown_template, paste0(author, '.Rmd'))
 
 }
