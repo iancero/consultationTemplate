@@ -1,6 +1,6 @@
 Binding: create_project
 Title: QCore Project
-OpenFiles: meeting1.Rmd
+OpenFiles: main.Rmd
 
 Parameter: author
 Widget: TextInput

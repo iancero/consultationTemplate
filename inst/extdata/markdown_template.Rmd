@@ -1,5 +1,5 @@
 ---
-title: "Special R Notebook"
+title: "PI: {author}"
 output: html_notebook
 ---
 

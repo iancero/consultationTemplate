@@ -38,15 +38,22 @@ create_project <- function(path, ...) {
     dir.create(folder, recursive = T, showWarnings = F)
   }
 
+
+  # do something with this?
+  author <- dots[['author']]
+
+
   # create and open an empty template on startup
   md_template_file <- system.file(
     'extdata',
     'markdown_template.Rmd',
     package = 'consultationTemplate',
     mustWork = TRUE)
-  markdown_template <- readLines(md_template_file)
 
-  author <- dots[['author']]
-  writeLines(markdown_template, paste0(author, '.Rmd'))
+  markdown_template <- md_template_file %>%
+    readLines() %>%
+    glue::glue()
+
+  writeLines(markdown_template, 'main.Rmd')
 
 }
