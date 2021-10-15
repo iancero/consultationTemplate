@@ -1,3 +1,10 @@
 Binding: create_project
 Title: QCore Project
+Icon: q_logo.png
 OpenFiles: meeting1.Rmd
+
+Parameter: author
+Widget: TextInput
+Label: Author
+Default: author
+Position: right
