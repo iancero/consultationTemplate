@@ -1,6 +1,9 @@
 ---
-title: "PI: {author}"
-output: html_notebook
+title: "QCore Consultation"
+subtitle: "XXX-Revise-XXX - {{{tools::toTitleCase(shortname)}}} ({{{tools::toTitleCase(client)}}}, {{{format(Sys.Date(), format = '%Y')}}})"
+author: "Ian Cero, PhD MStat"
+date: "Version 1, {{{Sys.Date()}}}"
+output: pdf_document
 ---
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
@@ -8,7 +11,7 @@ This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
 
 ```{r}
-plot(cars)
+library(tidyverse) # keep this in template so that renv knows to install it
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
